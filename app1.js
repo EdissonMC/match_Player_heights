@@ -24,12 +24,7 @@ fetch("https://mach-eight.uc.r.appspot.com/")
       // console.log(data.values[i].h_in);
 
       for (var j = i + 1; j < data.values.length / 2; j++) {
-        // console.log(
-        //   "-------->",
-        //   data.values[j].h_in,
-        //   "  ",
-        //   data.values[hi_j].h_in
-        // );
+
         var suma1 =
           parseInt(data.values[i].h_in) + parseInt(data.values[j].h_in);
         var suma2 =
@@ -37,16 +32,17 @@ fetch("https://mach-eight.uc.r.appspot.com/")
         var match = {};
         if (suma1 === parseInt(height_check)) {//139
           
-          // console.log("encontrado");
+
           match.name1 =  data.values[i].first_name + " " + data.values[i].last_name;
           match.name2 =  data.values[j].first_name + " " + data.values[i].last_name;
           resultado.push(match);
         }
         if (suma2 === parseInt(height_check)) {
-          // console.log("encontrado");
+
           match.name1 = data.values[hi_i].first_name + " " + data.values[hi_i].last_name;
           match.name2 = data.values[hi_j].first_name + " " + data.values[hi_j].last_name;
           resultado.push(match);
+          
         }
         hi_j = hi_j - 1;
       }
